@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+}
+.border-bottom{
+    border-bottom: 1px solid grey;
+
+}
+
+.Todo-container{
+    display: flex;
+    justify-content: center;
+    
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    
+}
+.description{
+    
+}
+.dateCate{
+    display: flex;
+
+}
+.tasks{
+    display: flex;
+    justify-content: center;
+}
+
+.list-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(61, 142, 255);
+    border:1px solid black;
+}
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 403px;
+    height: 40px;
+    color:white;
+    
+   
+    margin-bottom: 1px;
+}
+
+.para-name{
+    /* margin:auto; */
+    padding-left: 8px;
+    
+}
+.para-contact{
+    padding-right: 8px;
+}

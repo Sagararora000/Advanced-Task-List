@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%=locals.title%></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="Todo-container">
+        <div class="Todo">
+            <form action="/createList" method="post">
+                <h1 class="heading border-bottom pb-3">TO DO app</h1>
+                <div class="description border-bottom pb-3">
+                    <h5>description</h5>
+                    <input type="text" name="descript" placeholder="What do you need to do?">
+                </div>
+                <div class="dateCate border-bottom pb-3">
+                    <div class="category">
+                        <h5>category</h5>
+                        <!-- <label for="">Choose a category</label> -->
+                        <select name="category" id="">
+                            <% for(let i=0; i < cateType.length; i++){ %>
+                                <option value=<%=cateType[i].category%>>
+                                    <%= cateType[i].category%>
+                                </option>
+                                <%}%>
+                        </select>
+                    </div>
+                    <div class="date">
+                        <h5>Date</h5>
+                        <input name="setDate" type="text" id="datepicker">
+                    </div>
+                </div>
+                <div class="tasks border-bottom pb-3 mt-3">
+                    <button type="submit">
+                        <i class="fa-solid fa-square-plus"></i>
+                        ADD TASK
+                    </button>
+                    <!-- <button>
+                        <i class="fa-solid fa-trash-can"></i>
+                        DELETE TASK
+                    </button> -->
+                </div>
+            </form>
+            <%for(let i=0; i < tasksList.length; i++){%>
+                <div class="list-box">
+                    <div class="details">
+                        <p class="para-name">
+                            <%= tasksList[i].descript %>
+                        </p>
+                        <p class="para-contact">
+                            <%= tasksList[i].category %>
+                        </p>
+    
+                    </div>
+                </div>
+            <%}%>
+        </div>
+
+
+    </div>
+    
+
+            <script src="/js/start.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
