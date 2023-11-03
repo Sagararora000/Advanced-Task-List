@@ -12,14 +12,8 @@ const cate = [
         category:"others"
     }
 ];
-const tasksList = [{
-    descript:"hello",
-    category:"blkj"
-},
-{
-    descript:"lkjl",
-    category:"ljlj"
-}];
+
+
 module.exports.start = function(req,res){
     // return res.end("<h1>Start page is up!</h1>")
     return res.render('start',{

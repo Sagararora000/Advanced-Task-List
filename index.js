@@ -10,15 +10,10 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
 app.use(express.static("assets"));
 app.use(express.urlencoded());
-const tasksList = [{
-    descript:"hello",
-    category:"blkj"
-},
-{
-    descript:"lkjl",
-    category:"ljlj"
-}];
+const tasksList = [
+];
 const cate = [
+ 
     {   
         category:"personal"
     },
@@ -44,13 +39,20 @@ app.all("/", function(req,res){
 
 app.post("/createList", function (req, res) {
   console.log(req.body);
+  let a = new Date(req.body.setDate);
+  let b = a.toDateString();
   tasksList.push({
     descript: req.body.descript,
     category: req.body.category,
-    setDate: req.body.setDate,
+    setDate: b
   });
   return res.redirect("/");
 });
+
+app.get("/delete-contact",function(req,res){
+    
+    return res.redirect("/");
+})
 app.listen(port, function (err) {
   if (err) {
     console.log("There is an error in running the server:", err);
